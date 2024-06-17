@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="Marynfs">
+<meta name="viewport" content="width=device-width, height=device-height, user-scalable=no, initial-scale=1.0, maximum-scale=1.0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<link rel="stylesheet" href="images/index.css">
+<title>Mad at someone?</title>
+
+</head>
+<body>
+<div id="extra"></div>
+<div id="desc">
+	<div id="browser"></div>
+</div>
+
+<div id="myModal" class="modal" style="display: none;" >
+  <div class="modal-content">
+      <span class="close">&times;</span>
+      <div id="myContent" >
+            <form id='uploadImage' method="post" enctype="multipart/form-data">
+              Select image to upload:
+              <input type="file" name="fileToUpload" id="fileToUpload">
+              <input type="submit" value="Upload Image" name="submit"> 
+          </form>
+          <div id="preview"></div>
+      </div>
+  </div>
+</div>
+
+
+
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+ <script type="text/javascript">
+ $(document).ready(function (e) {
+  $("#uploadImage").on('submit',(function(e) {
+    e.preventDefault();
+    $.ajax({
+          url: "upload.php",
+          type: "POST",
+          data:  new FormData(this),
+          contentType: false,
+          cache: false,
+          processData:false,
+          beforeSend : function(){
+            //$("#preview").fadeOut();
+            $("#err").fadeOut();
+          },
+          success: function(data){
+            if(data=='invalid'){
+              // invalid file format.
+              $("#err").html("Invalid File !").fadeIn();
+            }
+            else{
+              // view uploaded file.
+              $("#preview").html(data).fadeIn();
+              $("#uploadImage")[0].reset(); 
+            }
+          },
+          error: function(e){
+            $("#err").html(e).fadeIn();
+          }     
+    });
+  }));
+});
+</script>
+<script src="scripts/all.js"></script>
+</body>
+</html>
