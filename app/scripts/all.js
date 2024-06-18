@@ -1124,7 +1124,7 @@ define("scripts/factory/fruit.js", function(exports){
 	};
 	
 ``
-	var types = [  "enemy"];
+	var types = [ "enemy"];
 	// var types = [ "sandia", "boom" ];
 	var rotateSpeed = [ 60, 50, 40, -40, -50, -60 ];
 	

@@ -12,8 +12,9 @@ RUN a2enmod rewrite
 
 # Install dependencies
 RUN apt-get update && apt-get install -y \
-    libpng-dev \
-    && docker-php-ext-install gd
+    libjpeg-dev libpng-dev\
+    && docker-php-ext-configure gd --with-jpeg \
+    && docker-php-ext-install gd    
 
 # Grant permissions to the image directory
 RUN chown -R www-data:www-data /var/www/html/images
