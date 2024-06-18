@@ -52,7 +52,7 @@ function splitImageInHalf($filePath, $target_dir, $file_name, $imageFileType) {
     }
 
     list($width, $height) = getimagesize($filePath);
-    $halfwidth = (int) $width / 2;
+    $halfwidth = (int) $width / 2; // TODO: using int did not solve the problem
     $leftSide = imagecreatetruecolor($halfwidth, $height);
     $rightSide = imagecreatetruecolor($halfwidth, $height);
 

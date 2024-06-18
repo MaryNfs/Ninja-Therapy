@@ -1115,7 +1115,7 @@ define("scripts/factory/fruit.js", function(exports){
 	var infos = {
 		// type: [ imageSrc, width, height, radius, fixAngle, isReverse, juiceColor ]
 		boom: [ "images/fruit/boom.png", 66, 68, 26, 0, 0, null ],
-		enemy:  [ "images/fruit/enemy.png", 100, 100, 37, -50, 0, "#c00"],
+		enemy:  [ "images/fruit/enemy.png", 100, 100, 37, -50, 0, "#c00"], // TODO: dont hardcode here
 		upload: [ "images/fruit/upload.png", 62, 59, 37, -50, 0, "#e6c731" ],
 		sandia: [ "images/fruit/sandia.png", 98, 85, 38, -100, 0, "#c00" ],
 		// apple: [ "images/fruit/apple.png", 66, 66, 31, -54, 0, "#c8e925" ],
