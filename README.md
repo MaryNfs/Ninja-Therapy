@@ -36,5 +36,5 @@ Use TensorFlow.js to scan the user's hands.
 Enable image splitting using hand gestures, eliminating the need for a mouse.
 
 ## License
-This project is licensed under the MIT License. See the LICENSE file for details.
+This project is licensed under the MIT License. See the [LICENSE](https://github.com/MaryNfs/Ninja-Therapy/blob/master/LICENSE) file for details.
 
