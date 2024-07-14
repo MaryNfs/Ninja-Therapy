@@ -17,7 +17,7 @@ Ninja Therapy is a web application inspired by the Android game Fruit Ninja. Ins
 
 ### Prerequisites
 
-- Docker and Docker Compose installed on your machine.
+Docker and Docker Compose are installed on your machine.
 
 
 ### Steps
@@ -36,7 +36,7 @@ Just upload the image and enjoy playing.
 
 ## Milestones
 ### Upcoming Features
-Integration with TensorFlow.js for Hand Scanning: <br>
+- **Integration with TensorFlow.js for Hand Scanning:**
 Use TensorFlow.js to scan the user's hands.
 Enable image splitting using hand gestures, eliminating the need for a mouse.
 
