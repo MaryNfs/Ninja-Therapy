@@ -1,5 +1,9 @@
 # Ninja Therapy
 
+
+https://github.com/user-attachments/assets/8dbcdf53-76bb-4f11-9e52-9dcd04847446
+
+
 Ninja Therapy is a web application inspired by the Android game Fruit Ninja. Instead of slicing fruits, users can upload pictures and slice them. The project also plans to integrate TensorFlow.js to scan the user's hands, allowing image splitting without using the mouse.
 
 ## Table of Contents
@@ -14,6 +18,7 @@ Ninja Therapy is a web application inspired by the Android game Fruit Ninja. Ins
 ### Prerequisites
 
 - Docker and Docker Compose installed on your machine.
+
 
 ### Steps
 
