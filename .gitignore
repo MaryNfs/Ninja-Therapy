@@ -1,0 +1,14 @@
+# Ignore uploaded enemy images but keep the initial versions
+# This allows the default images to be included in the repository
+# while ignoring any subsequent uploads
+
+# First, track the initial versions of enemy images
+# This ensures they're included in the repository
+# Note: If these files are already tracked, you'll need to run:
+# git add -f app/images/fruit/enemy.png app/images/fruit/enemy.jpg app/images/fruit/enemy-1.png app/images/fruit/enemy-1.jpg app/images/fruit/enemy-2.png app/images/fruit/enemy-2.jpg
+
+# Then, ignore future changes to these files
+# This prevents subsequent uploads from being tracked
+app/images/fruit/enemy*
+
+
