@@ -67,62 +67,50 @@
 });
 
 </script>
-<!-- Initialize the module system -->
+
 <script src="scripts/main-modular.js"></script>
 
-<!-- 2. Base Libraries -->
-<script src="scripts/lib/ucren.js"></script>
-<script src="scripts/lib/raphael.js"></script>
-<script src="scripts/lib/buzz.js"></script>
-<script src="scripts/lib/tween.js"></script>
-<script src="scripts/lib/sound.js"></script>    <!--   Requires buzz [76] -->
-
-<!-- 3. Core Helpers / Managers (depend on base libraries) -->
-<script src="scripts/message.js"></script>      <!-- Requires ucren [17] -->
-<script src="scripts/timeline.js"></script>    <!-- Requires ucren [26, 27] -->
-<script src="scripts/state.js"></script>       <!-- Requires ucren, timeline [25] -->
-<script src="scripts/tools.js"></script>       <!-- No listed internal dependencies [29] -->
-<script src="scripts/layer.js"></script>       <!-- Requires ucren, raphael [11] -->
-
-<!-- 4. Basic Objects & Factories (depend on core helpers/libraries/layer) -->
-<script src="scripts/object/flame.js"></script>      <!-- Requires layer, timeline, ucren [92, 93] -->
-<script src="scripts/object/flash.js"></script>      <!-- Requires layer, timeline, tween, ucren, sound [94, 95] -->
-<script src="scripts/factory/juice.js"></script>     <!-- Requires ucren, layer, timeline, tween, tools [44, 45] -->
-<script src="scripts/factory/displacement.js"></script><!-- Requires layer, timeline, tween [30] -->
-<script src="scripts/factory/rotate.js"></script>    <!-- Requires layer, timeline, ucren [48] -->
-<script src="scripts/object/console.js"></script>    <!-- Requires layer [88] -->
-<script src="scripts/object/background.js"></script> <!-- Requires ucren, layer, timeline [86] -->
-<script src="scripts/object/fps.js"></script>        <!-- Requires layer, timeline [97] -->
-<script src="scripts/object/knife.js"></script>      <!-- Requires timeline, layer, ucren [102] -->
-<script src="scripts/object/light.js"></script>      <!-- Requires layer, ucren, timeline, message [105] -->
-<script src="scripts/object/developing.js"></script> <!-- Requires layer, tween, timeline, message [89] -->
-<script src="scripts/object/game-over.js"></script>  <!-- Requires layer, tween, timeline, message, state [98] -->
-<script src="scripts/object/lose.js"></script>       <!-- Requires layer, tween, timeline, ucren, message [108, 109] -->
-<script src="scripts/object/new.js"></script>        <!-- Requires layer, tween, timeline, ucren [116] -->
-<script src="scripts/object/score.js"></script>      <!-- Requires layer, tween, timeline, ucren, message [120] -->
-
-<!-- 5. Objects using Factories (depend on factories and earlier modules) -->
-<script src="scripts/object/dojo.js"></script>       <!-- Requires factory/rotate, tween [91] -->
-<script src="scripts/object/home-desc.js"></script>  <!-- Requires factory/displacement, tween [100] -->
-<script src="scripts/object/home-mask.js"></script>  <!-- Requires factory/displacement, tween [101] -->
-<script src="scripts/object/logo.js"></script>       <!-- Requires factory/displacement, tween [108] -->
-<script src="scripts/object/new-game.js"></script>   <!-- Requires factory/rotate, tween [115] -->
-<script src="scripts/object/ninja.js"></script>      <!-- Requires factory/displacement, tween [118] -->
-<script src="scripts/object/quit.js"></script>       <!-- Requires factory/rotate, tween [119] -->
-
-<!-- 6. Factories depending on Objects (e.g., fruit requires flame, flash, juice) -->
-<script src="scripts/factory/fruit.js"></script>     <!-- Requires layer, ucren, timeline, tween, message, object/flame, object/flash, factory/juice [33, 34] -->
-
-<!-- 7. Game Logic Modules (depend on fruit, objects, helpers) -->
 <script src="scripts/collide.js"></script>     <!-- Requires factory/fruit, ucren [2] -->
 <script src="scripts/control.js"></script>     <!-- Requires ucren, object/knife, message, state [3] -->
-
-<!-- 8. Core Game / Scene Modules (depend on game logic, fruit, objects) -->
 <script src="scripts/game.js"></script>        <!-- Requires many modules, including fruit, score, lose, game-over, knife, background, light [6, 7] -->
-<script src="scripts/sence.js"></script>       <!-- Requires many modules, including game, fruit, flash, fps, various menu objects, score, lose, developing, game-over [18-20] -->
-
-<!-- 9. Main Entry Point (requires most other modules) -->
+<script src="scripts/layer.js"></script>       <!-- Requires ucren, raphael [11] -->
 <script src="scripts/main.js"></script> 
+<script src="scripts/message.js"></script>      <!-- Requires ucren [17] -->
+<script src="scripts/sence.js"></script>       <!-- Requires many modules, including game, fruit, flash, fps, various menu objects, score, lose, developing, game-over [18-20] -->
+<script src="scripts/state.js"></script>       <!-- Requires ucren, timeline [25] -->
+<script src="scripts/timeline.js"></script>    <!-- Requires ucren [26, 27] -->
+<script src="scripts/tools.js"></script>       <!-- No listed internal dependencies [29] -->
+
+<script src="scripts/factory/displacement.js"></script><!-- Requires layer, timeline, tween [30] -->
+<script src="scripts/factory/fruit.js"></script>     <!-- Requires layer, ucren, timeline, tween, message, object/flame, object/flash, factory/juice [33, 34] -->
+<script src="scripts/factory/juice.js"></script>     <!-- Requires ucren, layer, timeline, tween, tools [44, 45] -->
+<script src="scripts/factory/rotate.js"></script>    <!-- Requires layer, timeline, ucren [48] -->
+<script src="scripts/lib/buzz.js"></script>
+<script src="scripts/lib/raphael.js"></script>
+<script src="scripts/lib/sound.js"></script>    <!--   Requires buzz [76] -->
+<script src="scripts/lib/tween.js"></script>
+<script src="scripts/lib/ucren.js"></script>
+
+<script src="scripts/object/background.js"></script> <!-- Requires ucren, layer, timeline [86] -->
+<script src="scripts/object/console.js"></script>    <!-- Requires layer [88] -->
+<script src="scripts/object/developing.js"></script> <!-- Requires layer, tween, timeline, message [89] -->
+<script src="scripts/object/dojo.js"></script>       <!-- Requires factory/rotate, tween [91] -->
+<script src="scripts/object/flame.js"></script>      <!-- Requires layer, timeline, ucren [92, 93] -->
+<script src="scripts/object/flash.js"></script>      <!-- Requires layer, timeline, tween, ucren, sound [94, 95] -->
+<script src="scripts/object/fps.js"></script>        <!-- Requires layer, timeline [97] -->
+<script src="scripts/object/game-over.js"></script>  <!-- Requires layer, tween, timeline, message, state [98] -->
+<script src="scripts/object/home-desc.js"></script>  <!-- Requires factory/displacement, tween [100] -->
+<script src="scripts/object/home-mask.js"></script>  <!-- Requires factory/displacement, tween [101] -->
+<script src="scripts/object/knife.js"></script>      <!-- Requires timeline, layer, ucren [102] -->
+<script src="scripts/object/light.js"></script>      <!-- Requires layer, ucren, timeline, message [105] -->
+<script src="scripts/object/logo.js"></script>       <!-- Requires factory/displacement, tween [108] -->
+<script src="scripts/object/lose.js"></script>       <!-- Requires layer, tween, timeline, ucren, message [108, 109] -->
+<script src="scripts/object/new-game.js"></script>   <!-- Requires factory/rotate, tween [115] -->
+<script src="scripts/object/new.js"></script>        <!-- Requires layer, tween, timeline, ucren [116] -->
+<script src="scripts/object/ninja.js"></script>      <!-- Requires factory/displacement, tween [118] -->
+<script src="scripts/object/quit.js"></script>       <!-- Requires factory/rotate, tween [119] -->
+<script src="scripts/object/score.js"></script>      <!-- Requires layer, tween, timeline, ucren, message [120] -->
+
 
 <!-- Start the game -->
 <script>
