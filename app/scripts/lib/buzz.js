@@ -855,7 +855,8 @@ define("scripts/lib/buzz.js", function(exports){
 	    }
 	};
 	
-	exports = buzz;
+	// exports = buzz;
 
-	return exports;
+	// return exports;
+	exports.buzz = buzz;
 });

@@ -12,7 +12,7 @@ define("scripts/lib/sound.js", function(exports){
 	 * snd.play();
 	 */
 	
-	var buzz = require("scripts/lib/buzz");
+	var buzz = require("scripts/lib/buzz").buzz;
 	
 	function ClassBuzz( src ){
 	    this.sound = new buzz.sound( src, { formats: [ "ogg", "mp3" ], preload: true, autoload: true, loop: false });

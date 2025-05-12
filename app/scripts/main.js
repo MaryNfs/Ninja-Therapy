@@ -3,7 +3,7 @@ define("scripts/main.js", function(exports){
 	var tools = require("scripts/tools");
 	var sence = require("scripts/sence");
 	var Ucren = require("scripts/lib/ucren");
-	var buzz = require("scripts/lib/buzz");
+	var buzz = require("scripts/lib/buzz").buzz;
 	var control = require("scripts/control");
 	var csl = require("scripts/object/console");
 	var message = require("scripts/message");
