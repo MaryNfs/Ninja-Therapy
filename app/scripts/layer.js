@@ -3,7 +3,7 @@ define("scripts/layer.js", function(exports){
 	 * layer manager
 	 */
 	
-	var Raphael = require("scripts/lib/raphael");
+	var Raphael = require("scripts/lib/raphael").Raphael;
 	var Ucren = require("scripts/lib/ucren");
 	
 	var layers = {};
