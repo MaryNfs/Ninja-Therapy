@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="Marynfs">
+<meta name="viewport" content="width=device-width, height=device-height, user-scalable=no, initial-scale=1.0, maximum-scale=1.0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<link rel="stylesheet" href="images/index.css">
+<title>Mad at someone?</title>
+
+</head>
+<body>
+<div id="extra"></div>
+<div id="desc">
+	<div id="browser"></div>
+</div>
+
+<div id="myModal" class="modal" style="display: none;" >
+  <div class="modal-content">
+      <span class="close">&times;</span>
+      <div id="myContent" >
+            <form id='uploadImage' method="post" enctype="multipart/form-data">
+              Select image to upload:
+              <input type="file" name="fileToUpload" id="fileToUpload">
+              <input type="submit" value="Upload Image" name="submit"> 
+          </form>
+          <div id="preview"></div>
+      </div>
+  </div>
+</div>
+
+
+
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+ <script type="text/javascript">
+ $(document).ready(function (e) {
+  $("#uploadImage").on('submit',(function(e) {
+    e.preventDefault();
+    $.ajax({
+          url: "upload.php",
+          type: "POST",
+          data:  new FormData(this),
+          contentType: false,
+          cache: false,
+          processData:false,
+          beforeSend : function(){
+            //$("#preview").fadeOut();
+            $("#err").fadeOut();
+          },
+          success: function(data){
+            if(data=='invalid'){
+              // invalid file format.
+              $("#err").html("Invalid File !").fadeIn();
+            }
+            else{
+              // view uploaded file.
+              $("#preview").html(data).fadeIn();
+              $("#uploadImage")[0].reset(); 
+            }
+          },
+          error: function(e){
+            $("#err").html(e).fadeIn();
+          }     
+    });
+  }));
+});
+
+</script>
+
+<script src="scripts/main-modular.js"></script>
+
+<script src="scripts/collide.js"></script>     <!-- Requires factory/fruit, ucren [2] -->
+<script src="scripts/control.js"></script>     <!-- Requires ucren, object/knife, message, state [3] -->
+<script src="scripts/game.js"></script>        <!-- Requires many modules, including fruit, score, lose, game-over, knife, background, light [6, 7] -->
+<script src="scripts/layer.js"></script>       <!-- Requires ucren, raphael [11] -->
+<script src="scripts/main.js"></script> 
+<script src="scripts/message.js"></script>      <!-- Requires ucren [17] -->
+<script src="scripts/sence.js"></script>       <!-- Requires many modules, including game, fruit, flash, fps, various menu objects, score, lose, developing, game-over [18-20] -->
+<script src="scripts/state.js"></script>       <!-- Requires ucren, timeline [25] -->
+<script src="scripts/timeline.js"></script>    <!-- Requires ucren [26, 27] -->
+<script src="scripts/tools.js"></script>       <!-- No listed internal dependencies [29] -->
+
+<script src="scripts/factory/displacement.js"></script><!-- Requires layer, timeline, tween [30] -->
+<script src="scripts/factory/fruit.js"></script>     <!-- Requires layer, ucren, timeline, tween, message, object/flame, object/flash, factory/juice [33, 34] -->
+<script src="scripts/factory/juice.js"></script>     <!-- Requires ucren, layer, timeline, tween, tools [44, 45] -->
+<script src="scripts/factory/rotate.js"></script>    <!-- Requires layer, timeline, ucren [48] -->
+<script src="scripts/lib/buzz.js"></script>
+<script src="scripts/lib/raphael.js"></script>
+<script src="scripts/lib/sound.js"></script>    <!--   Requires buzz [76] -->
+<script src="scripts/lib/tween.js"></script>
+<script src="scripts/lib/ucren.js"></script>
+
+<script src="scripts/object/background.js"></script> <!-- Requires ucren, layer, timeline [86] -->
+<script src="scripts/object/console.js"></script>    <!-- Requires layer [88] -->
+<script src="scripts/object/developing.js"></script> <!-- Requires layer, tween, timeline, message [89] -->
+<script src="scripts/object/dojo.js"></script>       <!-- Requires factory/rotate, tween [91] -->
+<script src="scripts/object/flame.js"></script>      <!-- Requires layer, timeline, ucren [92, 93] -->
+<script src="scripts/object/flash.js"></script>      <!-- Requires layer, timeline, tween, ucren, sound [94, 95] -->
+<script src="scripts/object/fps.js"></script>        <!-- Requires layer, timeline [97] -->
+<script src="scripts/object/game-over.js"></script>  <!-- Requires layer, tween, timeline, message, state [98] -->
+<script src="scripts/object/home-desc.js"></script>  <!-- Requires factory/displacement, tween [100] -->
+<script src="scripts/object/home-mask.js"></script>  <!-- Requires factory/displacement, tween [101] -->
+<script src="scripts/object/knife.js"></script>      <!-- Requires timeline, layer, ucren [102] -->
+<script src="scripts/object/light.js"></script>      <!-- Requires layer, ucren, timeline, message [105] -->
+<script src="scripts/object/logo.js"></script>       <!-- Requires factory/displacement, tween [108] -->
+<script src="scripts/object/lose.js"></script>       <!-- Requires layer, tween, timeline, ucren, message [108, 109] -->
+<script src="scripts/object/new-game.js"></script>   <!-- Requires factory/rotate, tween [115] -->
+<script src="scripts/object/new.js"></script>        <!-- Requires layer, tween, timeline, ucren [116] -->
+<script src="scripts/object/ninja.js"></script>      <!-- Requires factory/displacement, tween [118] -->
+<script src="scripts/object/quit.js"></script>       <!-- Requires factory/rotate, tween [119] -->
+<script src="scripts/object/score.js"></script>      <!-- Requires layer, tween, timeline, ucren, message [120] -->
+
+
+<!-- Start the game -->
+<script>
+  startModule("scripts/main");
+</script>
+
+</body>
+</html>
